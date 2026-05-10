@@ -1,6 +1,6 @@
 # commit
 
-A skill for AI coding assistants that turns staged changes into clean, atomic git commits using [gitmoji](https://gitmoji.dev/), with all-lowercase messages. Works with Claude Code, OpenAI Codex, and GitHub Copilot.
+A skill for AI coding assistants that turns staged changes into clean, atomic git commits using [gitmoji](https://gitmoji.dev/), with all-lowercase messages.
 
 ## Usage
 
