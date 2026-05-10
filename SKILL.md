@@ -87,8 +87,8 @@ No trailing period. No type prefix (the emoji carries that signal).
 4. if the staged diff spans unrelated concerns, suggest splitting into separate commits
 5. unless `--no-verify` is passed, run available pre-commit checks (lint, build, type-check) and surface any failures before proceeding
 6. select the single most appropriate emoji from the reference table above
-7. draft the commit message: `<emoji> <lowercase imperative summary>`
-8. for non-trivial changes, draft a body (blank line after summary) with *what* changed and *why*
+7. draft the commit message: `<emoji> <lowercase imperative summary>` — keep the summary short (under 60 chars); avoid listing every changed file or detail in the summary
+8. only add a body when the *why* is non-obvious and cannot be inferred from the diff; skip the body for straightforward changes
 9. show the complete draft message and ask for confirmation or edits
 10. on approval, execute: `git commit -m "<message>"`
 
