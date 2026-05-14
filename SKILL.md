@@ -22,7 +22,7 @@ A Claude Code skill that analyzes staged changes, selects the right gitmoji, and
 ```
 /commit              # with pre-commit checks
 /commit --no-verify  # skip pre-commit checks
-/commit --yolo       # skip pre-commit checks and push to current branch
+/commit --push       # push to current branch after committing
 ```
 
 ## commit format
@@ -86,13 +86,13 @@ No trailing period. No type prefix (the emoji carries that signal).
    - wait for user confirmation before running `git add`
 3. run `git diff --cached` to read the full diff
 4. if the staged diff spans unrelated concerns, suggest splitting into separate commits
-5. unless `--no-verify` or `--yolo` is passed, run available pre-commit checks (lint, build, type-check) and surface any failures before proceeding
+5. unless `--no-verify` is passed, run available pre-commit checks (lint, build, type-check) and surface any failures before proceeding
 6. select the single most appropriate emoji from the reference table above
 7. draft the commit message: `<emoji> <lowercase imperative summary>` — keep the summary short (under 60 chars); avoid listing every changed file or detail in the summary
 8. only add a body when the *why* is non-obvious and cannot be inferred from the diff; skip the body for straightforward changes
 9. show the complete draft message and ask for confirmation or edits
 10. on approval, execute: `git commit -m "<message>"`
-11. if `--yolo` was passed, immediately run `git push` to push to the current branch after committing
+11. if `--push` was passed, immediately run `git push` to push to the current branch after committing
 
 ## best practices
 
@@ -102,4 +102,4 @@ No trailing period. No type prefix (the emoji carries that signal).
 - **body explains why** — the diff shows what changed; the body explains the motivation
 - **reference issues** — mention related issues or PRs in the body when relevant (`closes #123`)
 - **no --no-verify by default** — only skip checks when the user explicitly passes the flag
-- **--yolo** — combines `--no-verify` and `git push`; commits and pushes to the current branch without running pre-commit checks
+- **--push** — runs `git push` after committing; combine with `--no-verify` to also skip pre-commit checks

@@ -7,7 +7,7 @@ A skill for AI coding assistants that turns staged changes into clean, atomic gi
 ```
 /commit              # analyze staged changes and commit (with pre-commit checks)
 /commit --no-verify  # skip pre-commit checks
-/commit --yolo       # skip pre-commit checks and push to current branch
+/commit --push       # push to current branch after committing
 ```
 
 The assistant will inspect staged files, propose a message, and wait for your confirmation before committing.

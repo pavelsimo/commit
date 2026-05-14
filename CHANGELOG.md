@@ -8,5 +8,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- `--yolo` flag to skip pre-commit checks and push to the current branch after committing
+- `--push` flag to push to the current branch after committing
 - initial release of the commit skill with gitmoji support, staged-file inspection, and atomic commit guidance
