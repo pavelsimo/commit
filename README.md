@@ -1,4 +1,4 @@
-# commit
+# commit skill
 
 A skill for agents that turns staged changes into clean, atomic git commits using [gitmoji](https://gitmoji.dev/), with all-lowercase messages.
 
