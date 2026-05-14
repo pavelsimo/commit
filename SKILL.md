@@ -31,7 +31,7 @@ A Claude Code skill that analyzes staged changes, selects the right gitmoji, and
 <emoji> <lowercase imperative summary>
 ```
 
-For complex changes, add a body after a blank line explaining **what** changed and **why** — not how (the code shows how):
+For complex changes, add a body after a blank line explaining **what** changed and **why** — not how (the code shows how). The same applies to the summary: name the outcome, not the mechanism.
 
 ```
 ♻️ simplify pydantic v2 compatibility utils
@@ -88,7 +88,7 @@ No trailing period. No type prefix (the emoji carries that signal).
 4. if the staged diff spans unrelated concerns, suggest splitting into separate commits
 5. unless `--no-verify` is passed, run available pre-commit checks (lint, build, type-check) and surface any failures before proceeding
 6. select the single most appropriate emoji from the reference table above
-7. draft the commit message: `<emoji> <lowercase imperative summary>` — keep the summary short (under 60 chars); avoid listing every changed file or detail in the summary
+7. draft the commit message: `<emoji> <lowercase imperative summary>` — keep the summary short (under 60 chars); name the outcome, not the mechanism — write "fix crash when user has no email" not "add null check before accessing user.email"; avoid listing every changed file or detail in the summary
 8. only add a body when the *why* is non-obvious and cannot be inferred from the diff; skip the body for straightforward changes
 9. show the complete draft message and ask for confirmation or edits
 10. on approval, execute: `git commit -m "<message>"`
@@ -98,6 +98,7 @@ No trailing period. No type prefix (the emoji carries that signal).
 
 - **atomic commits** — one logical change per commit; if the diff touches unrelated things, offer to split
 - **imperative mood** — "add feature" not "added feature" or "adding feature"
+- **summary names outcomes** — describe what changes, not how: "fix crash when X" not "add null check for X"; "simplify token parser" not "replace for loop with list comprehension"
 - **all lowercase** — summary and body both lowercase; no trailing period
 - **body explains why** — the diff shows what changed; the body explains the motivation
 - **reference issues** — mention related issues or PRs in the body when relevant (`closes #123`)
